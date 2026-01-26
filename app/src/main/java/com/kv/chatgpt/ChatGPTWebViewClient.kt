@@ -7,7 +7,7 @@ import android.webkit.WebResourceRequest
 import android.webkit.WebView
 import android.webkit.WebViewClient
 
-class ChatGPTWebViewClient(private val context: Context) : WebViewClient() {
+open class ChatGPTWebViewClient(private val context: Context) : WebViewClient() {
 
     companion object {
         private val INTERNAL_DOMAINS = listOf(

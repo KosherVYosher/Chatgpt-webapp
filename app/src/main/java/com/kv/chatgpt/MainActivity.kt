@@ -44,7 +44,7 @@ class MainActivity : AppCompatActivity() {
         // Enable hardware acceleration
         webView.setLayerType(View.LAYER_TYPE_HARDWARE, null)
 
-        webView.webViewClient = object : ChatGPTWebViewClient(this) {
+        webView.webViewClient = object : ChatGPTWebViewClient(this@MainActivity) {
             override fun onPageStarted(view: WebView?, url: String?, favicon: Bitmap?) {
                 super.onPageStarted(view, url, favicon)
                 progressBar.visibility = View.VISIBLE
