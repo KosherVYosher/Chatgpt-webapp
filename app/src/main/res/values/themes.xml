@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Theme.ChatGPT" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/chatgpt_green</item>
+        <item name="colorPrimaryVariant">@color/chatgpt_dark</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorSecondary">@color/chatgpt_green</item>
+        <item name="colorSecondaryVariant">@color/chatgpt_dark</item>
+        <item name="colorOnSecondary">@color/white</item>
+        <item name="android:statusBarColor">@color/chatgpt_dark</item>
+        <item name="android:navigationBarColor">@color/chatgpt_dark</item>
+    </style>
+
+    <style name="Theme.ChatGPT.Splash" parent="Theme.ChatGPT">
+        <item name="android:windowBackground">@color/chatgpt_background</item>
+        <item name="android:statusBarColor">@color/chatgpt_background</item>
+        <item name="android:navigationBarColor">@color/chatgpt_background</item>
+    </style>
+
+</resources>
