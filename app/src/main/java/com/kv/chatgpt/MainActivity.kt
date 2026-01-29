@@ -92,8 +92,8 @@ class MainActivity : AppCompatActivity() {
             domStorageEnabled = true
             databaseEnabled = true
 
-            // Aggressive caching for speed
-            cacheMode = WebSettings.LOAD_CACHE_ELSE_NETWORK
+            // Standard HTTP caching (avoids serving stale pages after auth)
+            cacheMode = WebSettings.LOAD_DEFAULT
 
             // Rendering optimizations
             @Suppress("DEPRECATION")

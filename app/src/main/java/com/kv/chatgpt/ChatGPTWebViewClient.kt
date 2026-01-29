@@ -3,6 +3,7 @@ package com.kv.chatgpt
 import android.content.Context
 import android.content.Intent
 import android.net.Uri
+import android.webkit.CookieManager
 import android.webkit.WebResourceRequest
 import android.webkit.WebView
 import android.webkit.WebViewClient
@@ -14,7 +15,9 @@ open class ChatGPTWebViewClient(private val context: Context) : WebViewClient() 
             "chat.openai.com",
             "chatgpt.com",
             "openai.com",
-            "accounts.google.com",
+            "google.com",
+            "googleapis.com",
+            "gstatic.com",
             "auth0.openai.com",
             "auth.openai.com"
         )
@@ -46,5 +49,6 @@ open class ChatGPTWebViewClient(private val context: Context) : WebViewClient() 
 
     override fun onPageFinished(view: WebView?, url: String?) {
         super.onPageFinished(view, url)
+        CookieManager.getInstance().flush()
     }
 }
