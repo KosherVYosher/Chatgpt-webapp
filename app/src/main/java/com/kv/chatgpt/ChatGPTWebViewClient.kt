@@ -18,7 +18,8 @@ open class ChatGPTWebViewClient(private val context: Context) : WebViewClient() 
             "googleapis.com",
             "gstatic.com",
             "auth0.openai.com",
-            "auth.openai.com"
+            "auth.openai.com",
+            "accounts.google.com"
         )
     }
 
