@@ -39,21 +39,15 @@ jobs:
         id: version
         run: |
           VERSION_NAME=$(grep 'versionName' app/build.gradle.kts | head -1 | sed 's/.*"\(.*\)".*/\1/')
-          VERSION_CODE=$(grep 'versionCode' app/build.gradle.kts | head -1 | sed 's/[^0-9]//g')
           echo "name=v${VERSION_NAME}" >> $GITHUB_OUTPUT
-          echo "tag=v${VERSION_NAME}-${VERSION_CODE}" >> $GITHUB_OUTPUT
-
-      - name: Delete existing release with same tag
-        run: gh release delete "${{ steps.version.outputs.tag }}" --yes || true
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          echo "tag=v${VERSION_NAME}" >> $GITHUB_OUTPUT
 
       - name: Create GitHub Release
         run: |
           gh release create "${{ steps.version.outputs.tag }}" \
             app/build/outputs/apk/release/app-release.apk \
-            --title "ChatGPT WebApp ${{ steps.version.outputs.name }}" \
-            --notes "Signed release build" \
+            --title "ChatGPT WebApp ${{ steps.version.outputs.tag }}" \
+            --notes "Signed release build from commit ${{ github.sha }}" \
             --latest
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
