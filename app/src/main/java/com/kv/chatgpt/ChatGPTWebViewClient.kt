@@ -15,7 +15,6 @@ open class ChatGPTWebViewClient(private val context: Context) : WebViewClient() 
             "chat.openai.com",
             "chatgpt.com",
             "openai.com",
-            "google.com",
             "googleapis.com",
             "gstatic.com",
             "auth0.openai.com",
